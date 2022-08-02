@@ -19,6 +19,7 @@
 <body>
     <header>
         <div class="menu_side">
+            <h6 id="menu_list_active_button"><i class="bi bi-music-note-list"></i></h6>
             <h1>Playlist</h1>
             <div class="playlist">
                 <h4 class="active"><span></span><i class="bi bi-music-note-beamed"></i>Playlist</h4>
@@ -316,6 +317,22 @@
     </header>
     <script src="arjit.js"></script>
     <script>
+        let menu_list_active_button = document.getElementById('menu_list_active_button');
+        let menu_side = document.getElementsByClassName('menu_side')[0];
+
+menu_list_active_button.addEventListener('click', ()=>{
+    menu_side.style.transform = "unset";
+    menu_list_active_button.style.opacity = 0;
+})
+
+let song_side = document.getElementsByClassName('song_side')[0];
+
+
+song_side.addEventListener('click', ()=>{
+    menu_side.style.transform = "translateX(-100%)";
+    menu_list_active_button.style.opacity = 1;
+})
+        
         let userlink = document.getElementById('userlink');
 let signoutlink = document.getElementById('signoutlink');
 let header = document.getElementById('hh');
